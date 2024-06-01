@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Energy Storage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('pisayschool.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      height: 40px;
+    }
+    header .brand {
+      margin-left: 10px;
+    }
+    header .nav-links {
+      display: flex;
+      justify-content: flex-end;
+    }
+    header .nav-links a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 20px;
+    }
+    .content-container {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .content-container img {
+      max-width: 300px;
+      max-height: 300px;
+      border-radius: 5px;
+      margin-right: 20px;
+    }
+    .content-text {
+      flex: 1;
+      color: #808080;
+    }
+    .know-more-container {
+      background-color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      width: 300px;
+      border-radius: 10px;
+    }
+    .know-more-content {
+      text-align: center;
+    }
+    .next {
+      background-color: #808080;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .next:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>ENERGY STORAGE</h1>
+    </div>
+    <div class="nav-links">
+      <a href="solar-power.html">Solar Power</a>
+      <a href="wind-energy.html">Wind Energy</a>
+      <a href="energy-storage.html">Energy Storage</a>
+      <a href="others.html">Others</a>
+    </div>
+  </header>
+
+  <div class="content-container">
+    <img src="energystorage.jpg" alt="Energy Storage">
+    <div class="content-text">
+      <p>Lithium-ion batteries are advancing in energy density, lifespan, and safety, making them more suitable for large-scale energy storage.</p>
+      <p>Flow batteries provide scalability and a long cycle life, and there is ongoing research to improve their energy density and efficiency.</p>
+      <p>Hydrogen storage technologies, including fuel cells and electrolysis, are emerging as solutions for long-duration energy storage and transportation.</p>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="know-more-container">
+      <div class="know-more-content">
+        <h3>KNOW MORE</h3>
+        <ul>
+          <li><a href="https://www.nrel.gov/analysis/energy-storage.html">NREL page on energy storage analysis and research</a></li>
+          <li><a href="https://www.energy.gov/eere/articles/5-breakthrough-energy-storage-technologies-watch">U.S. Department of Energy page on emerging energy storage technologies</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="others.html" class="next">NEXT</a>
+  </div>
+
+  <script>
+    document.querySelector('.next').addEventListener('click', function() {
+      alert('You\'ll be proceeding to know information about other renewable technologies.');
+      window.location.href = 'others.html';
+    });
+  </script>
+</body>
+</html>

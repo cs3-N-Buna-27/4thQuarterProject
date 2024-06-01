@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RENEWABLE ENERGY TECHNOLOGIES</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: url('pisayschool.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    button {
+      background-color: gray;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    input {
+      padding: 5px;
+      margin: 5px;
+    }
+    .login-sheet {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px; 
+      height: 330px; 
+      margin: 20px auto; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .login-sheet form {
+      width: 100%;
+    }
+    .login-sheet input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>RENEWABLE ENERGY TECHNOLOGIES</h1>
+  <button id="sign-in-btn">Sign In</button>
+  <button id="sign-up-btn">Sign Up</button>
+
+  <div id="sign-up-form" style="display: none;">
+    <div class="login-sheet">
+      <h2>Sign Up</h2>
+      <form id="sign-up-form-content">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="sign-in-form" style="display: none;">
+    <div class="login-sheet">
+      <h2>Sign In</h2>
+      <form id="sign-in-form-content">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('sign-up-btn').addEventListener('click', function() {
+      document.getElementById('sign-up-form').style.display = 'block';
+      document.getElementById('sign-in-form').style.display = 'none';
+    });
+
+    document.getElementById('sign-in-btn').addEventListener('click', function() {
+      document.getElementById('sign-in-form').style.display = 'block';
+      document.getElementById('sign-up-form').style.display = 'none';
+    });
+
+    document.getElementById('sign-up-form-content').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value.trim();
+      var password = document.getElementById('password').value.trim();
+      var confirmPassword = document.getElementById('confirm-password').value.trim();
+      var username = document.getElementById('username').value.trim();
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+      } else {
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+
+        alert('Account registered successfully!');
+        window.location.href = 'solar-power.html';
+      }
+    });
+
+    document.getElementById('sign-in-form-content').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var username = document.getElementById('username').value.trim();
+      var password = document.getElementById('password').value.trim();
+
+      var registeredUsername = localStorage.getItem('username');
+      var registeredPassword = localStorage.getItem('password');
+
+      if (!registeredUsername || !registeredPassword) {
+        alert('Invalid account. Please sign up first.');
+        return;
+      }
+
+      if (username !== registeredUsername || password !== registeredPassword) {
+        alert('Invalid username or password. Please try again.');
+        return;
+      }
+
+      alert('Sign-in successful!');
+      window.location.href = 'solar-power.html';
+    });
+
+    window.onload = function() {
+      var registeredUsername = localStorage.getItem('username');
+      if (registeredUsername) {
+        document.getElementById('sign-up-form').style.display = 'none';
+        document.getElementById('sign-in-form').style.display = 'block';
+      }
+    };
+  </script>
+</body>
+</html>
